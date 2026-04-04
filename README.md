@@ -1,61 +1,77 @@
 # PROJETOS-IF687
 
-## IF867 - Introdução à Aprendizagem Profunda
+Repositório dos projetos da disciplina IF867 - Introdução à Aprendizagem Profunda (T01, 2026.1).
 
-### 1ª atividade prática
+## Primeira atividade: MLP
 
-Discente(s): Bruno Antonio dos Santos Bezerra
+Implementação e avaliação de uma rede neural Multilayer Perceptron (MLP) usando PyTorch, com otimização de hiperparâmetros e visualizações de desempenho na base Iris.
 
-Período: 7°
+## Estrutura do repositório
 
-### Instruções e Requisitos
-- Objetivo: Implementar e treinar um Multilayer Perceptron (MLP), inteiramente em [NumPy](https://numpy.org/doc/stable/) ou [Numba](https://numba.readthedocs.io/en/stable/index.html), sem o uso de bibliotecas de aprendizado profundo.
-- A atividade pode ser feita em dupla.
+- `primeira_atividade/mlp_project.ipynb`: notebook principal da atividade.
 
-### Tarefas
+## O que foi implementado no notebook
 
-__Implementação (50%):__
+- Carregamento da base Iris (`sklearn.datasets.load_iris`).
+- Split estratificado em treino, validação e teste.
+- Classe de dataset customizada para PyTorch.
+- MLP configurável por:
+    - número de camadas ocultas;
+    - número de neurônios por camada;
+    - função de ativação.
+- Treinamento com:
+    - função de perda CrossEntropy;
+    - early stopping por paciência;
+    - métrica de acurácia.
+- Otimização multiobjetivo com Optuna:
+    - maximizar acurácia;
+    - minimizar FLOPs.
+- Visualizações:
+    - importância de hiperparâmetros;
+    - fronteira de Pareto;
+    - curva de treino/validação (loss e métrica).
+- Desafio opcional implementado:
+    - fronteira de decisão em 2D via PCA (projeção da entrada 4D).
 
-- Construa um MLP com uma camada de entrada, pelo menos duas camadas ocultas e uma camada de saída.
-- Implemente pelo menos duas funções de ativação diferentes para as camadas ocultas; use Sigmoid e Linear para a camada de saída.
-- Implemente forward e backpropagation.
-- Implemente um otimizador de sua escolha, adequado ao problema abordado.
-- Implemente as funções de treinamento e avaliação.
+## Conferência de aderência aos requisitos da atividade
 
-__Aplicação (30%):__
+1. Implementação da MLP em PyTorch/TensorFlow:
+Status: atendido.
+Observação: a implementação foi feita em PyTorch.
 
-  Teste se os seus modelos estão funcionando bem com as seguintes tarefas:
-  - Regressão
-  - Classificação binária
+2. Entrada com número de camadas, neurônios por camada, taxa de aprendizado e taxa de momento:
+Status: atendido com ressalva de escopo.
+Observação: camadas, neurônios e learning rate estão parametrizados. A taxa de momento não foi incluída na busca principal por decisão de projeto, pois diferentes otimizadores exigem conjuntos distintos de parâmetros.
 
-__Experimentação (20%):__
+3. Escolha do algoritmo otimizador como entrada do usuário (quando usar PyTorch/TensorFlow):
+Status: atendido com configuração padrão fixa no experimento principal.
+Observação: o código já aceita entrada de `optimizer_fn` e `optimizer_params` para parâmetros adicionais, mas a execução base foi mantida com Adam para padronizar a comparação entre testes.
 
-  Teste os seus modelos com variações na arquitetura, no pré-processamento, etc. Escolha pelo menos uma das seguintes opções:
-  - Variações na inicialização de pesos
-  - Variações na arquitetura
-  - Implementação de técnicas de regularização
-  - Visualização das ativações e gradientes
+4. Uso de base simples (ex.: Iris):
+Status: atendido.
 
-***Bônus:*** Implemente o MLP utilizando uma biblioteca de machine learning (ex.: [PyTorch](https://pytorch.org/), [TensorFlow](https://www.tensorflow.org/?hl=pt-br), [tinygrad](https://docs.tinygrad.org/), [Jax](https://jax.readthedocs.io/en/latest/quickstart.html)) e teste-o em uma das aplicações e em um dos experimentos propostos. O bônus pode substituir um dos desafios de aplicação ou experimentos feitos em NumPy, ou simplesmente somar pontos para a pontuação geral.
+5. Escolha de hiperparâmetros por tentativa e erro:
+Status: atendido.
+Observação: a busca foi automatizada com Optuna.
 
-### Datasets recomendados:
-Aqui estão alguns datasets recomendados, mas fica a cargo do aluno escolher os datasets que utilizará na atividade, podendo escolher um dataset não listado abaixo.
-- Classificação
+6. Avaliação de desempenho:
+Status: atendido.
+Observação: inclui acurácia, curvas de loss/métrica e análise de custo computacional (FLOPs).
 
-  - [Iris](https://archive.ics.uci.edu/dataset/53/iris)
-  - [Breast Cancer Wisconsin (Diagnostic)](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic)
-  - [CDC Diabetes Health Indicators](https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators)
+7. Desafio opcional (fronteira de decisão):
+Status: atendido.
 
-- Regressão
+## Como executar
 
-  - [Air Quality](https://archive.ics.uci.edu/dataset/360/air+quality)
-  - [Student Performance](https://archive.ics.uci.edu/dataset/320/student+performance)
-  - [Wine Quality](https://archive.ics.uci.edu/dataset/186/wine+quality)
+1. Crie e ative um ambiente virtual (recomendado).
+2. Instale as dependências:
 
-### Requisitos para Entrega
+```bash
+pip install torch scikit-learn matplotlib optuna fvcore plotly numpy
+```
 
-Um notebook Jupyter (de preferência, o link do colab) ou script Python contendo:
+3. Abra e execute o notebook:
 
-- Código: Implementação completa da MLP.
-- Gráficos e Análises: Gráficos da curva de perda, ativações, gradientes e insights do treinamento, resultantes dos experimentos com parada antecipada e diferentes técnicas de regularização.
-- Relatório: Um breve relatório detalhando o impacto de várias configurações de hiperparâmetros(ex.: inicialização de pesos, número de camadas ocultas e neurônios) e métodos de regularização no desempenho do modelo.
+```bash
+jupyter notebook primeira_atividade/mlp_project.ipynb
+```
