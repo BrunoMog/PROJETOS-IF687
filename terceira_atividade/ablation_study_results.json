@@ -1,0 +1,16 @@
+{
+  "with_dropout": {
+    "accuracy": 0.9849,
+    "params": 2363130,
+    "flops": 3974528.0,
+    "train_time_sec": 1492.4433360099792,
+    "model_path": "/home/bruno/PROJETOS-IF687/terceira_atividade/models/best_with.pth"
+  },
+  "without_dropout": {
+    "accuracy": 0.9857,
+    "params": 2363130,
+    "flops": 3974528.0,
+    "train_time_sec": 272.0590784549713,
+    "model_path": "/home/bruno/PROJETOS-IF687/terceira_atividade/models/best_without.pth"
+  }
+}
