@@ -42,3 +42,6 @@ class RaabinDataset(Dataset):
         # Retornar como tensor
         target = torch.tensor(target_idx, dtype=torch.long)
         return image, target
+    
+    def __getitems__(self, indices):
+        return [self.__getitem__(idx) for idx in indices]
