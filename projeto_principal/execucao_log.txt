@@ -1,0 +1,436 @@
+Input Notebook:  main.ipynb
+Output Notebook: main_executado.ipynb
+Executing notebook with kernel: ia_venv
+Executing Cell 1---------------------------------------
+Ending Cell 1------------------------------------------
+Executing Cell 2---------------------------------------
+Ending Cell 2------------------------------------------
+Executing Cell 3---------------------------------------
+Ending Cell 3------------------------------------------
+Executing Cell 4---------------------------------------
+Using device: cpu
+
+Ending Cell 4------------------------------------------
+Executing Cell 5---------------------------------------
+Ending Cell 5------------------------------------------
+Executing Cell 6---------------------------------------
+Ending Cell 6------------------------------------------
+Executing Cell 7---------------------------------------
+Ending Cell 7------------------------------------------
+Executing Cell 8---------------------------------------
+Ending Cell 8------------------------------------------
+Executing Cell 9---------------------------------------
+Ending Cell 9------------------------------------------
+Executing Cell 10--------------------------------------
+Ending Cell 10-----------------------------------------
+Executing Cell 11--------------------------------------
+Ending Cell 11-----------------------------------------
+Executing Cell 12--------------------------------------
+Ending Cell 12-----------------------------------------
+Executing Cell 13--------------------------------------
+Ending Cell 13-----------------------------------------
+Executing Cell 14--------------------------------------
+Ending Cell 14-----------------------------------------
+Executing Cell 15--------------------------------------
+Ending Cell 15-----------------------------------------
+Executing Cell 16--------------------------------------
+Tamanho do dataset de treino: 10175 amostras
+Tamanho do dataset de teste A: 4339 amostras
+Tamanho do dataset de teste B: 2119 amostras
+
+Ending Cell 16-----------------------------------------
+Executing Cell 17--------------------------------------
+Tamanho do dataset de treino após split: 6999 amostras
+Tamanho do dataset de validação: 3176 amostras
+
+Ending Cell 17-----------------------------------------
+Executing Cell 18--------------------------------------
+Tamanho das imagens: 575x575
+
+Ending Cell 18-----------------------------------------
+Executing Cell 19--------------------------------------
+Ending Cell 19-----------------------------------------
+Executing Cell 20--------------------------------------
+Média: tensor([-7.0422e-06,  1.3982e-04, -2.0843e-06]), DP: tensor([1.0003, 1.0003, 1.0005])
+
+Ending Cell 20-----------------------------------------
+Executing Cell 21--------------------------------------
+<Figure size 400x400 with 1 Axes>
+Ending Cell 21-----------------------------------------
+Executing Cell 22--------------------------------------
+Ending Cell 22-----------------------------------------
+Executing Cell 23--------------------------------------
+Ending Cell 23-----------------------------------------
+Executing Cell 24--------------------------------------
+Ending Cell 24-----------------------------------------
+Executing Cell 25--------------------------------------
+Ending Cell 25-----------------------------------------
+Executing Cell 26--------------------------------------
+Ending Cell 26-----------------------------------------
+Executing Cell 27--------------------------------------
+Total de amostras: 6999
+Contagem por classe: {'Basophil': np.int64(146), 'Eosinophil': np.int64(512), 'Lymphocyte': np.int64(1669), 'Monocyte': np.int64(386), 'Neutrophil': np.int64(4286)}
+========================================
+
+<Figure size 800x500 with 1 Axes>
+Ending Cell 27-----------------------------------------
+Executing Cell 28--------------------------------------
+Tamanho do dataset de treino reduzido: 2000 amostras
+
+Ending Cell 28-----------------------------------------
+Executing Cell 29--------------------------------------
+Tamanho do dataset de validação reduzido: 1000 amostras
+
+Ending Cell 29-----------------------------------------
+Executing Cell 30--------------------------------------
+Total de amostras: 2000
+Contagem por classe: {'Basophil': np.int64(146), 'Eosinophil': np.int64(409), 'Lymphocyte': np.int64(463), 'Monocyte': np.int64(386), 'Neutrophil': np.int64(596)}
+========================================
+
+<Figure size 800x500 with 1 Axes>
+Ending Cell 30-----------------------------------------
+Executing Cell 31--------------------------------------
+Total de amostras: 1000
+Contagem por classe: {'Basophil': np.int64(66), 'Eosinophil': np.int64(202), 'Lymphocyte': np.int64(241), 'Monocyte': np.int64(175), 'Neutrophil': np.int64(316)}
+========================================
+
+<Figure size 800x500 with 1 Axes>
+Ending Cell 31-----------------------------------------
+Executing Cell 32--------------------------------------
+Ending Cell 32-----------------------------------------
+Executing Cell 33--------------------------------------
+Ending Cell 33-----------------------------------------
+Executing Cell 34--------------------------------------
+Ending Cell 34-----------------------------------------
+Executing Cell 35--------------------------------------
+Ending Cell 35-----------------------------------------
+Executing Cell 36--------------------------------------
+Ending Cell 36-----------------------------------------
+Executing Cell 37--------------------------------------
+Ending Cell 37-----------------------------------------
+Executing Cell 38--------------------------------------
+Ending Cell 38-----------------------------------------
+Executing Cell 39--------------------------------------
+Ending Cell 39-----------------------------------------
+Executing Cell 40--------------------------------------
+Ending Cell 40-----------------------------------------
+Executing Cell 41--------------------------------------
+Ending Cell 41-----------------------------------------
+Executing Cell 42--------------------------------------
+Ending Cell 42-----------------------------------------
+Executing Cell 43--------------------------------------
+Ending Cell 43-----------------------------------------
+Executing Cell 44--------------------------------------
+Ending Cell 44-----------------------------------------
+Executing Cell 45--------------------------------------
+Ending Cell 45-----------------------------------------
+Executing Cell 46--------------------------------------
+Ending Cell 46-----------------------------------------
+Executing Cell 47--------------------------------------
+[32m[I 2026-06-03 19:11:21,585][0m A new study created in RDB with name: raabin_wbc_cnn_optimization[0m
+
+✓ Novo estudo 'raabin_wbc_cnn_optimization' criado
+
+Iniciando otimização com 50 trials...
+
+
+Unsupported operator aten::tanh encountered 4 time(s)
+
+Unsupported operator aten::max_pool2d encountered 4 time(s)
+
+Unsupported operator aten::sigmoid encountered 2 time(s)
+
+[32m[I 2026-06-04 02:50:10,769][0m Trial 0 finished with values: [0.9333851845734603, 3744796048.0] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 64, 'out_channels_layer_1': 32, 'out_channels_layer_2': 32, 'out_channels_layer_3': 8, 'kernel_size': 4, 'stride_conv': 1, 'padding_conv': 0, 'dilatation': 3, 'kernel_stride_pool': 2, 'activation_function_conv': 'tanh', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 8, 'fc_units_1': 128, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.0036500217603722654, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': True, 'momentum': 0.8941623130288439, 'use_nesterov': True}.[0m
+
+[32m[I 2026-06-04 02:50:10,892][0m Trial 1 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 64, 'out_channels_layer_1': 16, 'out_channels_layer_2': 8, 'out_channels_layer_3': 64, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 2, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'tanh', 'use_dropout_conv': True, 'dropout_rate_conv': 0.3, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 16, 'activation_function_fc': 'relu', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.004673296091982971, 'optimizer': 'sgd', 'use_weight_decay': True, 'weight_decay': 1.4436353204515349e-06}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_0_model.pth
+
+Unsupported operator aten::tanh encountered 6 time(s)
+
+Unsupported operator aten::feature_dropout encountered 6 time(s)
+
+Unsupported operator aten::max_pool2d encountered 6 time(s)
+
+Unsupported operator aten::leaky_relu encountered 2 time(s)
+
+[32m[I 2026-06-04 05:01:49,711][0m Trial 2 finished with values: [0.07767929089443996, 4278824568.0] and parameters: {'num_conv_layers': 6, 'out_channels_layer_0': 64, 'out_channels_layer_1': 128, 'out_channels_layer_2': 64, 'out_channels_layer_3': 64, 'out_channels_layer_4': 16, 'out_channels_layer_5': 16, 'kernel_size': 4, 'stride_conv': 1, 'padding_conv': 4, 'dilatation': 1, 'kernel_stride_pool': 4, 'activation_function_conv': 'tanh', 'use_dropout_conv': True, 'dropout_rate_conv': 0.5, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 16, 'fc_units_1': 8, 'activation_function_fc': 'leaky_relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.3, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.00041024731855410625, 'optimizer': 'adam', 'use_weight_decay': True, 'weight_decay': 0.00025467856334922197, 'use_betas': True, 'beta1': 0.8427247362860856, 'beta2': 0.9019506045545405}.[0m
+
+[32m[I 2026-06-04 05:01:49,831][0m Trial 3 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 5, 'out_channels_layer_0': 8, 'out_channels_layer_1': 32, 'out_channels_layer_2': 16, 'out_channels_layer_3': 8, 'out_channels_layer_4': 128, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 0, 'dilatation': 1, 'kernel_stride_pool': 2, 'activation_function_conv': 'tanh', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 2, 'fc_units_0': 128, 'fc_units_1': 32, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.01822598757677603, 'optimizer': 'rmsprop', 'use_weight_decay': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_2_model.pth
+
+[32m[I 2026-06-04 05:01:49,953][0m Trial 4 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 6, 'out_channels_layer_0': 16, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'out_channels_layer_3': 32, 'out_channels_layer_4': 8, 'out_channels_layer_5': 128, 'kernel_size': 5, 'stride_conv': 2, 'padding_conv': 1, 'dilatation': 3, 'kernel_stride_pool': 2, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': True, 'dropout_rate_conv': 0.5, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 128, 'fc_units_1': 256, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': False, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.00036839994957741306, 'optimizer': 'sgd', 'use_weight_decay': True, 'weight_decay': 0.00023616735187984706}.[0m
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 2 time(s)
+
+[32m[I 2026-06-04 05:31:06,244][0m Trial 5 finished with values: [0.8811000881546891, 94295392.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 128, 'fc_units_1': 64, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.5, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.05198121703619785, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': False}.[0m
+
+[32m[I 2026-06-04 05:31:06,364][0m Trial 6 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 5, 'out_channels_layer_0': 16, 'out_channels_layer_1': 8, 'out_channels_layer_2': 64, 'out_channels_layer_3': 8, 'out_channels_layer_4': 16, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 2, 'dilatation': 1, 'kernel_stride_pool': 3, 'activation_function_conv': 'relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 3, 'fc_units_0': 128, 'fc_units_1': 16, 'fc_units_2': 16, 'activation_function_fc': 'relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.5, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.07428457802179506, 'optimizer': 'adam', 'use_weight_decay': True, 'weight_decay': 1.3659255128754953e-06}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_5_model.pth
+
+Unsupported operator aten::tanh encountered 7 time(s)
+
+Unsupported operator aten::max_pool2d encountered 4 time(s)
+
+[32m[I 2026-06-04 06:19:27,793][0m Trial 7 finished with values: [0.07767929089443996, 294925504.0] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 8, 'out_channels_layer_1': 64, 'out_channels_layer_2': 64, 'out_channels_layer_3': 16, 'kernel_size': 4, 'stride_conv': 1, 'padding_conv': 3, 'dilatation': 1, 'kernel_stride_pool': 5, 'activation_function_conv': 'tanh', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 3, 'fc_units_0': 128, 'fc_units_1': 8, 'fc_units_2': 128, 'activation_function_fc': 'tanh', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.13134110230787793, 'optimizer': 'adam', 'use_weight_decay': False, 'use_betas': False}.[0m
+
+[32m[I 2026-06-04 06:19:27,901][0m Trial 8 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 8, 'out_channels_layer_1': 8, 'out_channels_layer_2': 32, 'out_channels_layer_3': 16, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 3, 'dilatation': 3, 'kernel_stride_pool': 2, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': True, 'dropout_rate_conv': 0.5, 'use_normalization_conv': False, 'num_fc_layers': 2, 'fc_units_0': 64, 'fc_units_1': 256, 'activation_function_fc': 'tanh', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.0008810189379810875, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_7_model.pth
+
+[32m[I 2026-06-04 06:19:28,008][0m Trial 9 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 5, 'out_channels_layer_0': 8, 'out_channels_layer_1': 128, 'out_channels_layer_2': 64, 'out_channels_layer_3': 128, 'out_channels_layer_4': 16, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 0, 'dilatation': 2, 'kernel_stride_pool': 3, 'activation_function_conv': 'tanh', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 32, 'fc_units_1': 16, 'activation_function_fc': 'tanh', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.00441125289318464, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+[32m[I 2026-06-04 06:19:28,181][0m Trial 10 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 8, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 128, 'out_channels_layer_3': 128, 'out_channels_layer_4': 64, 'out_channels_layer_5': 32, 'out_channels_layer_6': 32, 'out_channels_layer_7': 64, 'kernel_size': 5, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 2, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 256, 'activation_function_fc': 'leaky_relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.5, 'use_normalization_fc': True, 'batch_size': 16, 'learning_rate': 0.48053782999690897, 'optimizer': 'rmsprop', 'use_weight_decay': False}.[0m
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 1 time(s)
+
+[32m[I 2026-06-04 06:46:01,322][0m Trial 11 finished with values: [0.8597848337254934, 94285592.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.034941068501091, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_11_model.pth
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 3 time(s)
+
+[32m[I 2026-06-04 10:17:29,061][0m Trial 12 finished with values: [0.3026335440506952, 1631104072.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 128, 'out_channels_layer_1': 16, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 4, 'activation_function_conv': 'relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 3, 'fc_units_0': 8, 'fc_units_1': 64, 'fc_units_2': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.6, 'use_normalization_fc': True, 'batch_size': 16, 'learning_rate': 0.2253900603894532, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_12_model.pth
+
+[32m[I 2026-06-04 10:17:29,272][0m Trial 13 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 8, 'out_channels_layer_0': 32, 'out_channels_layer_1': 32, 'out_channels_layer_2': 32, 'out_channels_layer_3': 32, 'out_channels_layer_4': 32, 'out_channels_layer_5': 64, 'out_channels_layer_6': 8, 'out_channels_layer_7': 8, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 1, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 3, 'fc_units_0': 256, 'fc_units_1': 64, 'fc_units_2': 32, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.2, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.04187936278818886, 'optimizer': 'rmsprop', 'use_weight_decay': False}.[0m
+
+[32m[I 2026-06-04 10:17:29,416][0m Trial 14 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 128, 'kernel_size': 5, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 2, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 64, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.5, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.007125860333060153, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+Unsupported operator aten::feature_dropout encountered 7 time(s)
+
+Unsupported operator aten::max_pool2d encountered 7 time(s)
+
+[32m[I 2026-06-04 12:37:51,619][0m Trial 15 finished with values: [0.07767929089443996, 2736041408.0] and parameters: {'num_conv_layers': 7, 'out_channels_layer_0': 128, 'out_channels_layer_1': 64, 'out_channels_layer_2': 16, 'out_channels_layer_3': 8, 'out_channels_layer_4': 128, 'out_channels_layer_5': 8, 'out_channels_layer_6': 128, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 4, 'activation_function_conv': 'relu', 'use_dropout_conv': True, 'dropout_rate_conv': 0.4, 'use_normalization_conv': False, 'num_fc_layers': 2, 'fc_units_0': 32, 'fc_units_1': 128, 'activation_function_fc': 'relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.3, 'use_normalization_fc': True, 'batch_size': 16, 'learning_rate': 0.002106887087837044, 'optimizer': 'sgd', 'use_weight_decay': True, 'weight_decay': 1.546006134474433e-05, 'use_momentum': True, 'momentum': 0.8848904424151626, 'use_nesterov': True}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_15_model.pth
+
+[32m[I 2026-06-04 12:37:51,793][0m Trial 16 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 32, 'out_channels_layer_2': 8, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 0, 'dilatation': 3, 'kernel_stride_pool': 3, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 128, 'fc_units_1': 64, 'activation_function_fc': 'leaky_relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.023965166400114882, 'optimizer': 'rmsprop', 'use_weight_decay': False}.[0m
+
+Unsupported operator aten::leaky_relu encountered 4 time(s)
+
+Unsupported operator aten::max_pool2d encountered 4 time(s)
+
+Unsupported operator aten::sigmoid encountered 2 time(s)
+
+[32m[I 2026-06-04 13:25:12,782][0m Trial 17 finished with values: [0.05957446808510638, 822992432.0] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 32, 'out_channels_layer_1': 128, 'out_channels_layer_2': 8, 'out_channels_layer_3': 32, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 3, 'dilatation': 2, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 128, 'fc_units_1': 64, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.2, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.09961719473204968, 'optimizer': 'adam', 'use_weight_decay': False, 'use_betas': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_17_model.pth
+
+Unsupported operator aten::feature_dropout encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 1 time(s)
+
+[32m[I 2026-06-04 14:42:44,702][0m Trial 18 finished with values: [0.4281729742664643, 494140152.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 64, 'out_channels_layer_1': 16, 'out_channels_layer_2': 32, 'kernel_size': 5, 'stride_conv': 2, 'padding_conv': 1, 'dilatation': 3, 'kernel_stride_pool': 2, 'activation_function_conv': 'relu', 'use_dropout_conv': True, 'dropout_rate_conv': 0.6, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.6, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.010929110202465071, 'optimizer': 'sgd', 'use_weight_decay': True, 'weight_decay': 1.769608804072056e-05, 'use_momentum': False}.[0m
+
+[32m[I 2026-06-04 14:42:44,853][0m Trial 19 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 16, 'out_channels_layer_1': 8, 'out_channels_layer_2': 16, 'out_channels_layer_3': 128, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 2, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 3, 'fc_units_0': 256, 'fc_units_1': 128, 'fc_units_2': 256, 'activation_function_fc': 'tanh', 'use_dropout_fc': True, 'dropout_rate_fc': 0.5, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.300719673003632, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_18_model.pth
+
+[32m[I 2026-06-04 14:42:45,007][0m Trial 20 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 7, 'out_channels_layer_0': 128, 'out_channels_layer_1': 64, 'out_channels_layer_2': 128, 'out_channels_layer_3': 64, 'out_channels_layer_4': 8, 'out_channels_layer_5': 8, 'out_channels_layer_6': 64, 'kernel_size': 4, 'stride_conv': 1, 'padding_conv': 4, 'dilatation': 2, 'kernel_stride_pool': 3, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 32, 'fc_units_1': 32, 'activation_function_fc': 'leaky_relu', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.05624546763999599, 'optimizer': 'rmsprop', 'use_weight_decay': False}.[0m
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 1 time(s)
+
+[32m[I 2026-06-04 15:12:17,067][0m Trial 21 finished with values: [0.9057461733243622, 94285592.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.033640719320439334, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_21_model.pth
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 1 time(s)
+
+[32m[I 2026-06-04 15:45:35,843][0m Trial 22 finished with values: [0.8980923146292344, 94285592.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.012357811643393933, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_22_model.pth
+
+Unsupported operator aten::feature_dropout encountered 4 time(s)
+
+Unsupported operator aten::max_pool2d encountered 4 time(s)
+
+[32m[I 2026-06-04 16:28:15,700][0m Trial 23 finished with values: [0.731086125893561, 102969112.0] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'out_channels_layer_3': 16, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 1, 'kernel_stride_pool': 4, 'activation_function_conv': 'relu', 'use_dropout_conv': True, 'dropout_rate_conv': 0.2, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.014283126330025849, 'optimizer': 'adam', 'use_weight_decay': True, 'weight_decay': 0.0009078125150567913, 'use_betas': True, 'beta1': 0.9897898579944826, 'beta2': 0.9972253273189856}.[0m
+
+[32m[I 2026-06-04 16:28:15,850][0m Trial 24 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 32, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 0, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.0020834995116115825, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_23_model.pth
+
+[32m[I 2026-06-04 16:28:16,029][0m Trial 25 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 7, 'out_channels_layer_0': 64, 'out_channels_layer_1': 128, 'out_channels_layer_2': 32, 'out_channels_layer_3': 8, 'out_channels_layer_4': 64, 'out_channels_layer_5': 128, 'out_channels_layer_6': 16, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 3, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.15730290260006327, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+[32m[I 2026-06-04 16:28:16,217][0m Trial 26 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 16, 'out_channels_layer_1': 16, 'out_channels_layer_2': 16, 'out_channels_layer_3': 32, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 1, 'dilatation': 2, 'kernel_stride_pool': 2, 'activation_function_conv': 'tanh', 'use_dropout_conv': True, 'dropout_rate_conv': 0.4, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.02556329444051099, 'optimizer': 'adam', 'use_weight_decay': True, 'weight_decay': 6.329702795231968e-06}.[0m
+
+[32m[I 2026-06-04 16:28:16,380][0m Trial 27 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 5, 'out_channels_layer_0': 128, 'out_channels_layer_1': 8, 'out_channels_layer_2': 128, 'out_channels_layer_3': 16, 'out_channels_layer_4': 32, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 2, 'dilatation': 1, 'kernel_stride_pool': 3, 'activation_function_conv': 'relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 64, 'activation_function_fc': 'leaky_relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.008393155642240618, 'optimizer': 'rmsprop', 'use_weight_decay': False}.[0m
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::tanh encountered 1 time(s)
+
+[32m[I 2026-06-04 17:53:09,276][0m Trial 28 finished with values: [0.9415803931679619, 711270576.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 4, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 16, 'activation_function_fc': 'tanh', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.001950879991450779, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': True, 'momentum': 0.512258852678246, 'use_nesterov': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_28_model.pth
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::tanh encountered 1 time(s)
+
+[32m[I 2026-06-04 19:32:24,131][0m Trial 29 finished with values: [0.923030100464938, 711270576.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 4, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 16, 'activation_function_fc': 'tanh', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.0021631632610418076, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_29_model.pth
+
+Unsupported operator aten::leaky_relu encountered 6 time(s)
+
+Unsupported operator aten::feature_dropout encountered 6 time(s)
+
+Unsupported operator aten::max_pool2d encountered 6 time(s)
+
+Unsupported operator aten::tanh encountered 1 time(s)
+
+[32m[I 2026-06-04 20:18:14,064][0m Trial 30 finished with values: [0.09604863221884499, 688763568.0] and parameters: {'num_conv_layers': 6, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'out_channels_layer_3': 64, 'out_channels_layer_4': 64, 'out_channels_layer_5': 16, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 4, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': True, 'dropout_rate_conv': 0.2, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 16, 'activation_function_fc': 'tanh', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.002015176264780299, 'optimizer': 'sgd', 'use_weight_decay': True, 'weight_decay': 7.661143237954217e-05, 'use_momentum': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_30_model.pth
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+[32m[I 2026-06-04 20:44:55,998][0m Trial 31 finished with values: [0.8806919630101632, 94285592.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.3, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.029331683337161792, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_31_model.pth
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 1 time(s)
+
+[32m[I 2026-06-04 21:11:37,209][0m Trial 32 finished with values: [0.839434436935151, 94285592.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.6, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.07316673235890438, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': True, 'momentum': 0.5365888719320426, 'use_nesterov': False}.[0m
+
+[32m[I 2026-06-04 21:11:37,358][0m Trial 33 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 64, 'out_channels_layer_1': 16, 'out_channels_layer_2': 8, 'out_channels_layer_3': 128, 'kernel_size': 5, 'stride_conv': 1, 'padding_conv': 2, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'tanh', 'use_dropout_conv': True, 'dropout_rate_conv': 0.3, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 16, 'activation_function_fc': 'relu', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.0007646421302246395, 'optimizer': 'sgd', 'use_weight_decay': True, 'weight_decay': 4.331228659272617e-06}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_32_model.pth
+
+Unsupported operator aten::tanh encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 1 time(s)
+
+[32m[I 2026-06-04 21:24:22,831][0m Trial 34 finished with values: [0.09978274874240992, 105019088.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 64, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 1, 'kernel_stride_pool': 4, 'activation_function_conv': 'tanh', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 16, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.2, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.01658756348943779, 'optimizer': 'adam', 'use_weight_decay': False, 'use_betas': True, 'beta1': 0.9506274392436589, 'beta2': 0.9461561777214021}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_34_model.pth
+
+Unsupported operator aten::leaky_relu encountered 5 time(s)
+
+Unsupported operator aten::max_pool2d encountered 4 time(s)
+
+[32m[I 2026-06-04 23:12:02,751][0m Trial 35 finished with values: [0.7112765215961303, 1161820432.0] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 8, 'out_channels_layer_1': 128, 'out_channels_layer_2': 16, 'out_channels_layer_3': 64, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 0, 'dilatation': 3, 'kernel_stride_pool': 2, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'leaky_relu', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.009674233691591122, 'optimizer': 'rmsprop', 'use_weight_decay': False, 'use_momentum': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_35_model.pth
+
+Unsupported operator aten::feature_dropout encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::sigmoid encountered 1 time(s)
+
+[32m[I 2026-06-05 00:22:25,103][0m Trial 36 finished with values: [0.4742242877853033, 169520200.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 64, 'out_channels_layer_1': 32, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 1, 'dilatation': 1, 'kernel_stride_pool': 5, 'activation_function_conv': 'relu', 'use_dropout_conv': True, 'dropout_rate_conv': 0.6, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 16, 'learning_rate': 0.019348864826060568, 'optimizer': 'sgd', 'use_weight_decay': True, 'weight_decay': 6.258923079330692e-05, 'use_momentum': False}.[0m
+
+[32m[I 2026-06-05 00:22:25,275][0m Trial 37 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 5, 'out_channels_layer_0': 16, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'out_channels_layer_3': 128, 'out_channels_layer_4': 32, 'kernel_size': 5, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 2, 'kernel_stride_pool': 5, 'activation_function_conv': 'tanh', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 32, 'activation_function_fc': 'tanh', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.005933868216265667, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_36_model.pth
+
+[32m[I 2026-06-05 00:22:25,446][0m Trial 38 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 6, 'out_channels_layer_0': 32, 'out_channels_layer_1': 8, 'out_channels_layer_2': 64, 'out_channels_layer_3': 16, 'out_channels_layer_4': 128, 'out_channels_layer_5': 32, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 3, 'dilatation': 3, 'kernel_stride_pool': 3, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 3, 'fc_units_0': 256, 'fc_units_1': 16, 'fc_units_2': 64, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': False, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.003161646166790438, 'optimizer': 'adam', 'use_weight_decay': True, 'weight_decay': 0.0008330356808699643}.[0m
+
+[32m[I 2026-06-05 00:22:25,613][0m Trial 39 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 8, 'out_channels_layer_0': 128, 'out_channels_layer_1': 64, 'out_channels_layer_2': 32, 'out_channels_layer_3': 32, 'out_channels_layer_4': 8, 'out_channels_layer_5': 64, 'out_channels_layer_6': 16, 'out_channels_layer_7': 16, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 2, 'dilatation': 1, 'kernel_stride_pool': 2, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': True, 'dropout_rate_conv': 0.6, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 64, 'activation_function_fc': 'relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.6, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.00030410617004867746, 'optimizer': 'rmsprop', 'use_weight_decay': False}.[0m
+
+[32m[I 2026-06-05 00:22:25,765][0m Trial 40 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 5, 'out_channels_layer_0': 8, 'out_channels_layer_1': 128, 'out_channels_layer_2': 128, 'out_channels_layer_3': 16, 'out_channels_layer_4': 64, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 4, 'activation_function_conv': 'tanh', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 2, 'fc_units_0': 16, 'fc_units_1': 256, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': False, 'use_normalization_fc': True, 'batch_size': 16, 'learning_rate': 0.0005950004731986064, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::tanh encountered 1 time(s)
+
+[32m[I 2026-06-05 01:58:57,864][0m Trial 41 finished with values: [0.9388465230700538, 711270576.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 1, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 4, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 16, 'activation_function_fc': 'tanh', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.0012070209733051184, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': True, 'momentum': 0.5091653268360162, 'use_nesterov': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_41_model.pth
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::tanh encountered 1 time(s)
+
+[32m[I 2026-06-05 02:20:26,611][0m Trial 42 finished with values: [0.8784577073694073, 88824792.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'tanh', 'use_dropout_fc': True, 'dropout_rate_fc': 0.3, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.047515438125806005, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': True, 'momentum': 0.5066252304648899, 'use_nesterov': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_42_model.pth
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::tanh encountered 1 time(s)
+
+[32m[I 2026-06-05 02:39:48,074][0m Trial 43 finished with values: [0.875758447270323, 44449304.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 16, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'tanh', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.048595853063679466, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': True, 'momentum': 0.5181649765691939, 'use_nesterov': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_43_model.pth
+
+Unsupported operator aten::leaky_relu encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+Unsupported operator aten::tanh encountered 2 time(s)
+
+[32m[I 2026-06-05 02:53:39,520][0m Trial 44 finished with values: [0.4729381686841882, 44449368.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 16, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 2, 'fc_units_0': 8, 'fc_units_1': 8, 'activation_function_fc': 'tanh', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.05744209428690156, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': True, 'momentum': 0.6761129973598634, 'use_nesterov': False}.[0m
+
+[32m[I 2026-06-05 02:53:39,688][0m Trial 45 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 16, 'out_channels_layer_1': 16, 'out_channels_layer_2': 64, 'out_channels_layer_3': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 0, 'dilatation': 3, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 8, 'activation_function_fc': 'tanh', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.03965968494918328, 'optimizer': 'sgd', 'use_weight_decay': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_44_model.pth
+
+[32m[I 2026-06-05 02:53:39,970][0m Trial 46 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 16, 'out_channels_layer_1': 64, 'out_channels_layer_2': 8, 'out_channels_layer_3': 32, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 2, 'kernel_stride_pool': 5, 'activation_function_conv': 'relu', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 2, 'fc_units_0': 8, 'fc_units_1': 32, 'activation_function_fc': 'leaky_relu', 'use_dropout_fc': True, 'dropout_rate_fc': 0.4, 'use_normalization_fc': False, 'batch_size': 32, 'learning_rate': 0.09691743064843247, 'optimizer': 'adam', 'use_weight_decay': False}.[0m
+
+[32m[I 2026-06-05 02:53:40,320][0m Trial 47 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 7, 'out_channels_layer_0': 8, 'out_channels_layer_1': 8, 'out_channels_layer_2': 16, 'out_channels_layer_3': 64, 'out_channels_layer_4': 8, 'out_channels_layer_5': 128, 'out_channels_layer_6': 128, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 3, 'dilatation': 1, 'kernel_stride_pool': 5, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': False, 'num_fc_layers': 1, 'fc_units_0': 64, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': True, 'dropout_rate_fc': 0.3, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.17595247476422832, 'optimizer': 'sgd', 'use_weight_decay': True, 'weight_decay': 4.107883191230624e-06}.[0m
+
+Unsupported operator aten::tanh encountered 6 time(s)
+
+Unsupported operator aten::feature_dropout encountered 3 time(s)
+
+Unsupported operator aten::max_pool2d encountered 3 time(s)
+
+[32m[I 2026-06-05 03:48:07,738][0m Trial 48 finished with values: [0.8964753085532513, 95642464.0] and parameters: {'num_conv_layers': 3, 'out_channels_layer_0': 32, 'out_channels_layer_1': 32, 'out_channels_layer_2': 8, 'kernel_size': 3, 'stride_conv': 2, 'padding_conv': 1, 'dilatation': 3, 'kernel_stride_pool': 3, 'activation_function_conv': 'tanh', 'use_dropout_conv': True, 'dropout_rate_conv': 0.3, 'use_normalization_conv': True, 'num_fc_layers': 3, 'fc_units_0': 256, 'fc_units_1': 16, 'fc_units_2': 128, 'activation_function_fc': 'tanh', 'use_dropout_fc': True, 'dropout_rate_fc': 0.2, 'use_normalization_fc': True, 'batch_size': 32, 'learning_rate': 0.021538630193201118, 'optimizer': 'sgd', 'use_weight_decay': False, 'use_momentum': True, 'momentum': 0.6482279188548521, 'use_nesterov': False}.[0m
+
+[32m[I 2026-06-05 03:48:07,886][0m Trial 49 finished with values: [0.0, inf] and parameters: {'num_conv_layers': 4, 'out_channels_layer_0': 64, 'out_channels_layer_1': 64, 'out_channels_layer_2': 32, 'out_channels_layer_3': 128, 'kernel_size': 4, 'stride_conv': 2, 'padding_conv': 4, 'dilatation': 3, 'kernel_stride_pool': 2, 'activation_function_conv': 'leaky_relu', 'use_dropout_conv': False, 'use_normalization_conv': True, 'num_fc_layers': 1, 'fc_units_0': 128, 'activation_function_fc': 'sigmoid', 'use_dropout_fc': False, 'use_normalization_fc': False, 'batch_size': 16, 'learning_rate': 0.09430623124075302, 'optimizer': 'rmsprop', 'use_weight_decay': False}.[0m
+
+  → Modelo salvo: optuna_studies/models/trial_48_model.pth
+
+Ending Cell 47-----------------------------------------
+Executing Cell 48--------------------------------------
+"\n# Célula de treinamento teste de uma cnn\ncnn_params = CNNParameters(\n    num_conv_layers=4,\n    stride_conv_layers=1,\n    input_channels=3,\n    out_channels_list=[16, 32, 64, 128],\n    use_pooling=True,\n    padding_conv_layer=1,\n    dilatation=1,\n    bias=True,\n    kernel_size=3,\n    kernel_stride=2,\n    kernel_padding=0,\n    kernel_dilatation=1,\n    activation_function_conv='relu',\n    fully_connected_layers_list=[64],\n    activation_function_fully_connected='relu',\n    dropout_rate_fully_connected=0.5,\n    dropout_rate_conv=0.3,\n    output_size_fully_connected=len(CLASSES_DO_PROJETO),\n    image_size_height=IMG_HEIGHT,\n    image_size_width=IMG_WIDTH,\n    use_normalization_cnn=True,\n    use_normalization_fc=True\n)\nmodel, train_dataloader, test_dataloader, val_dataloader = create_cnn_model_and_dataloaders(\n    cnn_params, train_reduced_dataset, testA_dataset, val_reduced_dataset, batch_size=64\n)\nmodel = model.to(device)\nloss_fn = nn.CrossEntropyLoss()\noptimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-4)\nhistory_train_loss, history_val_loss, history_val_metric = train_model(\n    model,\n    train_dataloader,\n    val_dataloader,\n    loss_fn,\n    optimizer,\n    num_epochs=2000,\n    patience=10,\n    metric_fn=f1_score_macro,\n    device=device,\n    verbose=True\n)\n"
+Ending Cell 48-----------------------------------------
+Executing Cell 49--------------------------------------
+Ending Cell 49-----------------------------------------
+Executing Cell 50--------------------------------------
+Ending Cell 50-----------------------------------------
