@@ -30,7 +30,7 @@ NUM_WORKERS = 1
 PERSISTENT_WORKERS = False
 NJOBS = 1
 NUM_TRIALS = 50
-DIFF_THRESHOLD = 0.1
+DIFF_THRESHOLD = 0.0
 
 # === Persistência do Optuna ===
 STUDY_NAME = "raabin_wbc_cnn_optimization"
@@ -917,12 +917,17 @@ model_resnet = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
 
 model_resnet.fc = nn.Linear(model_resnet.fc.in_features, len(CLASSES_DO_PROJETO))
 
+# Desbloquear todas as camadas para fine-tuning total
 for param in model_resnet.parameters():
-    param.requires_grad = False
-model_resnet.fc.requires_grad_(True)
+    param.requires_grad = True
 
 loss_fn_resnet = nn.CrossEntropyLoss()
-optimizer_resnet = torch.optim.Adam(model_resnet.fc.parameters(), lr=1e-3)
+# Taxas de aprendizado diferenciais: 1e-5 para camadas base convolucionais, 1e-3 para fc final
+optimizer_resnet = torch.optim.Adam([
+    {'params': [p for name, p in model_resnet.named_parameters() if 'fc' not in name], 'lr': 1e-5},
+    {'params': model_resnet.fc.parameters(), 'lr': 1e-3}
+])
+
 
 history_train_loss_resnet, history_val_loss_resnet, history_val_metric_resnet = train_model(
     model_resnet.to(device),
@@ -968,12 +973,17 @@ model_mobile_net_v3_large = models.mobilenet_v3_large(weights=models.MobileNet_V
 
 model_mobile_net_v3_large.classifier[3] = nn.Linear(model_mobile_net_v3_large.classifier[3].in_features, len(CLASSES_DO_PROJETO))
 
+# Desbloquear todas as camadas para fine-tuning total
 for param in model_mobile_net_v3_large.parameters():
-    param.requires_grad = False
-model_mobile_net_v3_large.classifier[3].requires_grad_(True)
+    param.requires_grad = True
 
 loss_fn_mobile_net_v3_large = nn.CrossEntropyLoss()
-optimizer_mobile_net_v3_large = torch.optim.Adam(model_mobile_net_v3_large.classifier[3].parameters(), lr=1e-3)
+# Taxas de aprendizado diferenciais: 1e-5 para a base convolucional, 1e-3 para o classificador final
+optimizer_mobile_net_v3_large = torch.optim.Adam([
+    {'params': [p for name, p in model_mobile_net_v3_large.named_parameters() if 'classifier.3' not in name], 'lr': 1e-5},
+    {'params': model_mobile_net_v3_large.classifier[3].parameters(), 'lr': 1e-3}
+])
+
 
 history_train_loss_mobile_net_v3_large, history_val_loss_mobile_net_v3_large, history_val_metric_mobile_net_v3_large = train_model(
     model_mobile_net_v3_large.to(device),
@@ -1019,12 +1029,17 @@ model_efficientnet_b0 = models.efficientnet_b0(weights=models.EfficientNet_B0_We
 
 model_efficientnet_b0.classifier[1] = nn.Linear(model_efficientnet_b0.classifier[1].in_features, len(CLASSES_DO_PROJETO))
 
+# Desbloquear todas as camadas para fine-tuning total
 for param in model_efficientnet_b0.parameters():
-    param.requires_grad = False
-model_efficientnet_b0.classifier[1].requires_grad_(True)
+    param.requires_grad = True
 
 loss_fn_efficientnet_b0 = nn.CrossEntropyLoss()
-optimizer_efficientnet_b0 = torch.optim.Adam(model_efficientnet_b0.classifier[1].parameters(), lr=1e-3)
+# Taxas de aprendizado diferenciais: 1e-5 para a base convolucional, 1e-3 para o classificador final
+optimizer_efficientnet_b0 = torch.optim.Adam([
+    {'params': [p for name, p in model_efficientnet_b0.named_parameters() if 'classifier.1' not in name], 'lr': 1e-5},
+    {'params': model_efficientnet_b0.classifier[1].parameters(), 'lr': 1e-3}
+])
+
 
 history_train_loss_efficientnet_b0, history_val_loss_efficientnet_b0, history_val_metric_efficientnet_b0 = train_model(
     model_efficientnet_b0.to(device),
