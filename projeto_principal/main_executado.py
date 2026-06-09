@@ -19,6 +19,8 @@ import json
 from dataset_utils import RaabinDataset
 from pathlib import Path
 from datetime import datetime
+from preprocessing_utils import AspectPreservingResizeAndPad, ApplyCLAHE
+
 
 
 # ### Configurando variáveis de ambiente e execução
@@ -29,7 +31,7 @@ print(f'Using device: {device}')
 NUM_WORKERS = 1
 PERSISTENT_WORKERS = False
 NJOBS = 1
-NUM_TRIALS = 50
+NUM_TRIALS = 100
 DIFF_THRESHOLD = 0.0
 
 # === Persistência do Optuna ===
@@ -68,13 +70,16 @@ STD = torch.tensor([0.1623, 0.1899, 0.0971])
 IMG_HEIGHT = 575
 IMG_WIDTH = 575
 transform_train = v2.Compose([v2.ToImage(),
-                              v2.Resize((IMG_HEIGHT, IMG_WIDTH)),
+                              AspectPreservingResizeAndPad(target_size=IMG_HEIGHT, fill=255),
+                              ApplyCLAHE(clip_limit=2.0),
                               v2.ToDtype(dtype=torch.float32, scale=True),
                               v2.Normalize(mean=MEAN, std=STD)])
 transform_test = v2.Compose([v2.ToImage(),
-                            v2.Resize((IMG_HEIGHT, IMG_WIDTH)),
+                             AspectPreservingResizeAndPad(target_size=IMG_HEIGHT, fill=255),
+                             ApplyCLAHE(clip_limit=2.0),
                              v2.ToDtype(dtype=torch.float32, scale=True),
                              v2.Normalize(mean=MEAN, std=STD)])
+
 
 from dataset_utils import RaabinDataset
 
@@ -88,6 +93,8 @@ def split_train_val_dataset(dataset, val_size, random_state=42):
         random_state=random_state, 
         stratify=labels)
     return Subset(dataset, train_idx), Subset(dataset, val_idx)
+from preprocessing_utils import AspectPreservingResizeAndPad, ApplyCLAHE
+
 
 def calcular_media_std(loader):
     channels_sum, channels_squared_sum, num_batches = 0, 0, 0
@@ -891,16 +898,19 @@ del model_cnn
 
 train_transform_resnet = v2.Compose([
     v2.ToImage(),
-    v2.Resize((224, 224)),
+    AspectPreservingResizeAndPad(target_size=224, fill=255),
+    ApplyCLAHE(clip_limit=2.0),
     v2.ToDtype(dtype=torch.float32, scale=True),
     v2.Normalize(mean=MEAN, std=STD)
 ])
 test_transform_resnet = v2.Compose([
     v2.ToImage(),
-    v2.Resize((224, 224)),
+    AspectPreservingResizeAndPad(target_size=224, fill=255),
+    ApplyCLAHE(clip_limit=2.0),
     v2.ToDtype(dtype=torch.float32, scale=True),
     v2.Normalize(mean=MEAN, std=STD)
 ])
+
 
 train_dataset_resnet = RaabinDataset(root_dir='./../datasets/raabin_wbc/Train', class_list=CLASSES_DO_PROJETO, transform=train_transform_resnet)
 testA_dataset_resnet = RaabinDataset(root_dir='./../datasets/raabin_wbc/Test-A', class_list=CLASSES_DO_PROJETO, transform=test_transform_resnet)
