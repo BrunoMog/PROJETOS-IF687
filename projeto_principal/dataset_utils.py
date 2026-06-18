@@ -4,6 +4,29 @@ from PIL import Image
 from torch.utils.data import Dataset
 
 
+class CachedDataset(Dataset):
+    """
+    Dataset wrapper que processa e faz cache dos exemplos em memória na primeira vez que são instanciados.
+    Ideal para Optuna, onde as mesmas amostras são usadas repetidamente em cada trial.
+    """
+    def __init__(self, dataset):
+        self.dataset = dataset
+        self.cache = [None] * len(dataset)
+        
+        print(f"Fazendo cache em memória de {len(dataset)} amostras. Aguarde...")
+        for i in range(len(dataset)):
+            if i > 0 and i % 500 == 0:
+                print(f"  [{i}/{len(dataset)}] amostras cacheadas...")
+            self.cache[i] = self.dataset[i]
+        print("Cache finalizado!")
+
+    def __len__(self):
+        return len(self.dataset)
+
+    def __getitem__(self, idx):
+        return self.cache[idx]
+
+
 class RaabinDataset(Dataset):
     """
     Dataset customizado para o banco de dados Raabin WBC.
